@@ -1,0 +1,29 @@
+{
+	"manifest_version": 3,
+	"name": "Create a Git branch name from current JIRA ticket",
+	"version": "1.0.0",
+	"description": "Right click to create a branch name frmo the current JIRA ticket",
+	"author": "Urban Sanden",
+	"background": {
+		"service_worker": "js/background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"js/content.js"
+			]
+		}
+	],
+	"icons": {
+		"16": "images/icon.png",
+		"128": "images/icon.png"
+	},
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"contextMenus"
+	]
+}
