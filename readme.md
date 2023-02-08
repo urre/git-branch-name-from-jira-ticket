@@ -1,4 +1,4 @@
-Create a git branch name from a JIRA Ticket
+# Create a git branch name from a JIRA Ticket
 
 Chrome Extension that creates a git branch name from a Jira Ticket number and title.
 
