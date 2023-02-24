@@ -9,7 +9,7 @@ function slugify(text) {
     .replace(/\-\-+/g, "-");
 }
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request) {
   if (request.message === "copyText") {
     const ticketTitle = document.querySelector(
       '[data-test-id="issue.views.issue-base.foundation.summary.heading"]'
@@ -17,10 +17,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     const ticketNumber = request.textToCopy;
     const branchName = `${ticketNumber}-${slugify(ticketTitle)}`;
 
-    try {
-      navigator.clipboard.writeText(branchName);
-    } catch (error) {
-      console.error(error);
-    }
+    setTimeout(() => {
+      navigator.clipboard.writeText(branchName).then(() => {
+        console.log("Copied the branch name " + branchName + " to clipboard");
+      });
+    });
   }
 });
