@@ -25,7 +25,7 @@ Paste it anywhere
 + Navigate to the folder where you saved it
 
 ## Usage
-+ Click the extension browser button icon to get branch name in your clipboard
++ Right click and click "Copy Git branch name to Clipboard"...
 
 ### Changelog
 + 2023-02-08: 🎉 First version released
