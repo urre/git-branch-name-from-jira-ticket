@@ -14,7 +14,12 @@ async function notifyContentScript(selection, tab) {
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "gitbranchname",
-    title: "Copy Git branch name to clipboard for ”%s”",
+    title: "Copy ”%s”",
+    contexts: ["selection"],
+  });
+  chrome.contextMenus.create({
+    id: "gitbranchname",
+    title: "Copy feat/dev/”%s”",
     contexts: ["selection"],
   });
 });
